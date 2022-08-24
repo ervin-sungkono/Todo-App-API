@@ -35,7 +35,7 @@ export const createTodo = async (req, res, next) => {
         const todo = new Todo(title, due_date, req.user.user_id);
         await todo.create(); 
     
-        return res.status(201).send({message: 'Todo created!', user: req.user})
+        return res.status(201).send({message: 'Todo created!'})
     }catch(err){
         return next(err);
     }
