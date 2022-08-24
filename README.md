@@ -41,12 +41,10 @@ Request:
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
 | `username` | `string` | **Required**. Your Username |
-| :--- | :--- | :--- |
 | `password` | `string` | **Required**. Your Password |
-| :--- | :--- | :--- |
 | `confirmPassword` | `string` | **Required**. Your Confirm Password |
-| :--- | :--- | :--- |
 | `email` | `string` | **Required**. Your Email Address |
+
 Registers the user into database.
 
 Request:
@@ -56,8 +54,8 @@ Request:
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
 | `username` | `string` | **Required**. Your Username |
-| :--- | :--- | :--- |
 | `password` | `string` | **Required**. Your Password |
+
 Authenticate the user, will return a token in response.
 
 ### CRUD Todo
@@ -80,8 +78,8 @@ Request:
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
 | `title` | `string` | **Required**. Your Todo Title |
-| :--- | :--- | :--- |
 | `due_date` | `date` | **Required**. Due Date for the Todo |
+
 Adds a todo into the database.
 
 Request:
@@ -91,10 +89,9 @@ Request:
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
 | `title` | `string` | **Required**. Your Todo Title |
-| :--- | :--- | :--- |
 | `due_date` | `date` | **Required**. Due Date for the Todo |
-| :--- | :--- | :--- |
 | `completed` | `tinyint` | **Required**. Determines whether Todo is completed or not |
+
 Updates a todo with given id.
 
 Request:
