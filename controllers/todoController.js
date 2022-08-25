@@ -12,7 +12,7 @@ export const getAllTodo = async (req, res, next) => {
 
 export const findTodo = async (req, res, next) => {
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.params.id || req.query.id);
         let [todo, _] = await Todo.findById(id);
         todo = todo[0];
         if(todo.user_id === req.user.user_id){
@@ -48,7 +48,7 @@ export const updateTodo = async (req, res, next) => {
             return res.status(422).send({ errors: errors.array() });
         }
 
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.params.id || req.query.id);
         let [todo, _] = await Todo.findById(id);
         todo = todo[0];
         if(todo.user_id === req.user.user_id){
@@ -65,7 +65,7 @@ export const updateTodo = async (req, res, next) => {
 
 export const deleteTodo = async (req, res, next) => {
     try{
-        const id = parseInt(req.params.id);
+        const id = parseInt(req.params.id || req.query.id);
         let [todo, _] = await Todo.findById(id);
         todo = todo[0];
         if(todo.user_id === req.user.user_id){
