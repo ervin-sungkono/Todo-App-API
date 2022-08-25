@@ -55,7 +55,7 @@ export const updateTodo = async (req, res, next) => {
             const { title, due_date, completed } = req.body;
             await Todo.update(id, title, due_date, completed);
 
-            return res.status(204).send({message: 'Todo updated!'});
+            return res.status(200).send({message: 'Todo updated!'});
         }
         return res.status(400).send({message: 'Invalid access.'});
     }catch(err){
@@ -71,7 +71,7 @@ export const deleteTodo = async (req, res, next) => {
         if(todo.user_id === req.user.user_id){
             await Todo.delete(id);
 
-            return res.status(204).send({message: 'Todo deleted!'});
+            return res.status(200).send({message: 'Todo deleted!'});
         }
         return res.status(400).send({message: 'Invalid access.'});
     }catch(err){
