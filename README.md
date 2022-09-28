@@ -67,7 +67,7 @@ Returns all the todo list that is created by the user.
 
 Request:
 ```http
-    GET /todo/?id=id
+    GET /todo/id
 ```
 Returns a todo with the given id if it is created by the user.
 
@@ -84,7 +84,7 @@ Adds a todo into the database.
 
 Request:
 ```http
-    PATCH /todo/?id=id
+    PATCH /todo/id
 ```
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
@@ -96,7 +96,7 @@ Updates a todo with given id.
 
 Request:
 ```http
-    DELETE/todo/?id=id
+    DELETE/todo/id
 ```
 Deletes a todo with given id.
 
