@@ -28,7 +28,7 @@ const createTable = `
         id INTEGER AUTO_INCREMENT PRIMARY KEY,
         user_id CHAR(36) NOT NULL,
         title VARCHAR(255) NOT NULL,
-        completed TINYINT(1) NOT NULL DEFAULT 0,
+        completed INT(1) NOT NULL DEFAULT 0,
         due_date DATE,
         created_at DATE,
         updated_at DATE,
