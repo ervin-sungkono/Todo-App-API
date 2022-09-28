@@ -42,13 +42,13 @@ class Todo{
         return db.execute(sqlQuery);
     }
 
-    static update(id, title, completed, due_date){
+    static update(id, title, due_date, completed){
         const d = new Date();
         const year = d.getFullYear();
         const month = d.getMonth() + 1;
         const day = d.getDate();
         const updatedAt = `${year}-${month}-${day}`;
-
+        
         const sqlQuery =
             `UPDATE todo
             SET title = ${db.escape(title)},
