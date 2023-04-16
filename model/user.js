@@ -39,9 +39,9 @@ class User {
         return db.execute(sqlQuery);
     }
 
-    static findUser(username) {
+    static findUser(email) {
         const sqlQuery = 
-            `SELECT * FROM user WHERE username = ${db.escape(username)}`;
+            `SELECT * FROM user WHERE email = ${db.escape(email)}`;
         return db.execute(sqlQuery);
     }
 

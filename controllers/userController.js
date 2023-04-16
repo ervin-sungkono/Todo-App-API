@@ -4,7 +4,7 @@ import User from '../model/user.js';
 
 export const getUser = async (req, res, next) => {
     try{
-        const [user, _] = await User.findUser(req.user.username);
+        const [user, _] = await User.findUser(req.user.email);
         return res.send({
             user_id: user[0].user_id,
             username: user[0].username,
@@ -23,9 +23,9 @@ export const loginUser = async (req, res, next) => {
             return res.status(422).send({ errors: errors.array() });
         }
 
-        const { username, password } = req.body;
+        const { email, password } = req.body;
 
-		let [user, _] = await User.findUser(username);
+		let [user, _] = await User.findUser(email);
 		user = user[0];
        
         if (user && await bcrypt.compare(password, user.password)) {
@@ -52,12 +52,12 @@ export const createUser = async (req, res, next) => {
 
         let {username, email, password} = req.body;
 
-		const [userExists, _] = await User.findUser(username);
+        email = email.toLowerCase();
+		const [userExists, _] = await User.findUser(email);
 		if(userExists.length) {
 			return res.status(409).send({ message:'User already exists.' });
 		}
 
-        email = email.toLowerCase();
         const encryptedPassword = await bcrypt.hash(password,10);
 
 		const user = new User(username, email, encryptedPassword);

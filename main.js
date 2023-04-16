@@ -19,5 +19,5 @@ app.use('/todo',todoRoutes);
 app.use('/user',userRoutes);
 
 app.listen(PORT, () => {
-    console.log(`server ready on port https://localhost:${PORT}`);
+    console.log(`server ready on port http://localhost:${PORT}`);
 });
