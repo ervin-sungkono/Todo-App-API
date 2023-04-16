@@ -8,8 +8,8 @@ const router = express.Router();
 // VALIDATE
 const {body} = validator;
 const validateLoginUser = [
-    body('username')
-        .exists().withMessage('username doesn\'t exists.'),
+    body('email')
+        .exists().withMessage('email doesn\'t exists.'),
     body('password')
         .exists().withMessage('password doesn\'t exists')
 ];
